@@ -4,10 +4,10 @@ import { useDispatch } from "react-redux";
 import { addProductToCart } from "./../../../action/cart";
 
 const Addtocart = (props) => {
-  const { id } = props;
+  const { product } = props;
   const dispatch = useDispatch();
-  const _addProductToCart = (id, qty) => {
-    dispatch(addProductToCart(id, qty));
+  const _addProductToCart = (product, qty) => {
+    dispatch(addProductToCart(product, qty));
   };
   return (
     <div className="mb-5 btn-addto">
@@ -16,9 +16,9 @@ const Addtocart = (props) => {
         className="mx-2"
         color="danger"
         onClick={() => {
-          _addProductToCart(id, 1);
+          _addProductToCart(product, 1);
           setTimeout(() => {
-            // window.location.href = "/cart";
+            window.location.href = "/cart";
           }, 500);
         }}
       >

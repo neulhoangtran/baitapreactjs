@@ -83,7 +83,7 @@ function Product() {
                 <MDBIcon fab icon="instagram" />
               </MDBBtn>
             </div>
-            <Addtocart id={product.id} />
+            <Addtocart product={product} />
           </div>
         </div>
       </div>
