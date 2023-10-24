@@ -64,3 +64,7 @@ a {
     top: 7px;
     border-radius: 1px;
 }
+
+.col-image img {
+    max-width: 100%;
+}
