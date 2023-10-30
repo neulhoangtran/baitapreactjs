@@ -6,7 +6,6 @@ import Star from "./Filter/Star";
 
 const Filter = () => {
   const filters = useSelector((state) => state.product.filters);
-  console.log(["filters", filters]);
   if (!filters.length === 0) return;
   return (
     <div className="filter-bar my-5">

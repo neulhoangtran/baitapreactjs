@@ -15,6 +15,11 @@ const cartReducer = (state = initState, action) => {
         ...state,
         items: action.payload.data,
       };
+    case "SUCCESS_REMOVE_PRODUCT_TO_CART":
+      return {
+        ...state,
+        items: action.payload.data,
+      };
     default:
       return state;
   }

@@ -12,9 +12,16 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const Grid = () => {
-  const products = useSelector((state) => state.product.productList);
-  console.log(["products", products]);
-  if (!products.length === 0) return;
+  const products = useSelector((state) => state.product.currentProductList);
+
+  console.log(products);
+  if (products.length === 0)
+    return (
+      <MDBContainer fluid className="">
+        <MDBRow className="g-4 mt-5 ml-2"> There is no product!</MDBRow>
+      </MDBContainer>
+    );
+
   return (
     <MDBContainer fluid className="">
       <MDBRow className="g-4">
@@ -50,11 +57,12 @@ const Grid = () => {
                     Available: <span className="fw-bold">6</span>
                   </p>
                   <div className="ms-auto text-warning">
-                    <MDBIcon fas icon="star" />
-                    <MDBIcon fas icon="star" />
-                    <MDBIcon fas icon="star" />
-                    <MDBIcon fas icon="star" />
-                    <MDBIcon fas icon="star" />
+                    {}
+                    {[...Array(parseInt(product.rating.rate) - 1)].map(
+                      (rate, index) => (
+                        <MDBIcon key={index} fas icon="star" />
+                      )
+                    )}
                   </div>
                 </div>
               </MDBCardBody>
